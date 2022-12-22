@@ -125,6 +125,8 @@ def train(model, dataloader, epochs=10):
             writer.add_scalar("Loss/Train", loss.item(), batch_idx)
             batch_idx += 1
 
+    model.parameters()
+    writer.add_embedding()    
 
 word2vec = Word2Vec(n_words=len(dataset.idx_to_token), embedding_dim=128)
 
